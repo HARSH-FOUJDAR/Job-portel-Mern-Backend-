@@ -29,9 +29,9 @@ app.use("/api/job", jobRoutes);
 app.use("/api/application", applicationRoutes);
 // cloudinary code
 cloudinary.config({
-  cloud_name: "dkbcfjxhv",
-  api_key: "779515296253342",
-  api_secret: "7rX4Kda63GM_7PQ9c7gGKrozuXk",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 app.listen(PORT, () => {
   connectDB();
