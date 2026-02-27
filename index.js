@@ -14,17 +14,15 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  }),
-);
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
+
+
 
 const PORT = process.env.PORT || 3000;
-// api endpoints
+
 
 app.use("/api/user", userRoutes);
 app.use("/api/company", companyRoutes);
